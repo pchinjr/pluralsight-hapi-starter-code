@@ -14,3 +14,4 @@ Also, the ```hapi-auth-cookie``` package also has some newer breaking changes. I
 ```sh
 npm install hapi-auth-cookie@2.2.0 --save
 ```
+# pluralsight-hapi-starter-code
