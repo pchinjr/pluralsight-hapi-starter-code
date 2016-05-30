@@ -4,6 +4,7 @@ var fs = require('fs');
 var Joi = require('joi');
 var Boom = require('boom');
 
+
 var server = new Hapi.Server();
 
 var cards = loadCards();
@@ -17,9 +18,42 @@ server.views({
   path: './templates'
 });
 
-server.ext('onRequest', function(request, reply){
-  console.log('Request received: ' + request.path);
-  reply.continue();
+server.register({
+    register: require('good'),
+    options: {
+      opsInterval: 5000,
+      reporters: [
+        {
+          reporter: require('good-file'),
+          events: { ops: '*'},
+          config: {
+            path: './logs',
+            prefix: 'hapi-process',
+            rotate: 'daily'
+          }
+        },
+        {
+          reporter: require('good-file'),
+          events: { response: '*'},
+          config: {
+            path: './logs',
+            prefix: 'hapi-requests',
+            rotate: 'daily'
+          }
+        },
+        {
+          reporter: require('good-file'),
+          events: { error: '*'},
+          config: {
+            path: './logs',
+            prefix: 'hapi-error',
+            rotate: 'daily'
+          }
+        }
+      ]
+    }
+}, function(err) {
+    console.log(err);
 });
 
 server.ext('onPreResponse', function(request, reply) {
