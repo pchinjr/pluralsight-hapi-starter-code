@@ -15,54 +15,24 @@
 		</a>
 	</header>
 	<ul class="cards">
+    {{#each cards}}
 		<li class="card">
-			<div class="recipient">To: Jim Bob
+			<div class="recipient">To: {{name}}
 			</div>
-			<img src="/assets/images/cards/xmas_card.jpg">
+			<img src="/assets/images/cards/{{card_image}}">
 			<div class="actions">
-				<a href="cards/12345" class="btn btn-default" role="button">
+				<a href="cards/{{id}}" class="btn btn-default" role="button">
 					Preview
 				</a>
-				<a href="cards/12345" class="btn btn-default delete-button" role="button">
+				<a href="cards/{{id}}" class="btn btn-default delete-button" role="button">
 					Delete
 				</a>
-				<a href="cards/12345/send" class="btn btn-default" role="button">
+				<a href="cards/{{id}}/send" class="btn btn-default" role="button">
 					Send
 				</a>
 			</div>
 		</li>
-		<li class="card">
-			<div class="recipient">To: Jenny Sue
-			</div>
-			<img src="/assets/images/cards/halloween_card.jpg">
-			<div class="actions">
-				<a href="cards/12346" class="btn btn-default" role="button">
-					Preview
-				</a>
-				<a href="cards/12346" class="btn btn-default delete-button" role="button">
-					Delete
-				</a>
-				<a href="cards/12346/send" class="btn btn-default" role="button">
-					Send
-				</a>
-			</div>
-		</li>
-		<li class="card">
-			<div class="recipient">To: Sammy Paige
-			</div>
-			<img src="/assets/images/cards/party_card.jpg">
-			<div class="actions">
-				<a href="cards/12347" class="btn btn-default" role="button">
-					Preview
-				</a>
-				<a href="cards/12347" class="btn btn-default delete-button" role="button">
-					Delete
-				</a>
-				<a href="cards/12347/send" class="btn btn-default" role="button">
-					Send
-				</a>
-			</div>
-		</li>
+    {{/each}}
 	</ul>
 	<script>
 		var deleteButtons = document.getElementsByClassName('delete-button'),
