@@ -1,4 +1,4 @@
 {
-  "watch": ["**/*.*"],
-  "ignore": ['logs/']
+	"watch": ["**/*.*"],
+	"ignore": ["logs/"]
 }

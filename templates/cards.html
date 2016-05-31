@@ -1,9 +1,5 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>hapi Greetings</title>
 	<link rel="stylesheet" href="/assets/css/stylesheet.css" />
 </head>
@@ -13,9 +9,12 @@
 		<a href="cards/new" class="btn btn-default" role="button">
 			Make New Card
 		</a>
+		<a href="upload" class="btn btn-default" role="button">
+			Upload a Card Image
+		</a>
 	</header>
 	<ul class="cards">
-    {{#each cards}}
+		{{#each cards}}
 		<li class="card">
 			<div class="recipient">To: {{name}}
 			</div>
@@ -32,7 +31,7 @@
 				</a>
 			</div>
 		</li>
-    {{/each}}
+		{{/each}}
 	</ul>
 	<script>
 		var deleteButtons = document.getElementsByClassName('delete-button'),

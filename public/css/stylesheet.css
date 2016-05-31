@@ -172,8 +172,9 @@ footer {
 	margin-bottom: 20px;
 }
 
-.card-images > label > img {
- max-width: 250px;
+.new_card img {
+	max-width: 200px;
+	max-height: 200px
 }
 
 form > input{
@@ -279,9 +280,7 @@ input[type=checkbox], input[type=radio] {
 .cards > li > img {
 	max-width: 250px;
 }
-.card-images > label > img {
-	max-width: 250px;
-}
+
 .user,
 .login {
 	position: absolute;
